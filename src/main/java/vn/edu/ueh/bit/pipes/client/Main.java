@@ -17,6 +17,7 @@ public class Main {
     public static void main(String[] args) {
         List<IFilter<IMessage>> filters = new ArrayList<>();
         IMessage message = new Message();
+        message.setFileContent("{\"invoices\":[{\"invoiceId\":1,\"custId\":1,\"productId\":1,\"quantity\":100,\"description\":\"sample invoice 1\"},{\"invoiceId\":2,\"custId\":1,\"productId\":1,\"quantity\":100,\"description\":\"sample invoice 2\"},{\"invoiceId\":3,\"custId\":1,\"productId\":1,\"quantity\":100,\"description\":\"sample invoice 3\"}],\"payments\":[{\"paymentId\":1,\"custId\":1,\"cardNumber\":\"7485-2222-3456-2435\",\"cvv\":\"111\"},{\"paymentId\":2,\"custId\":1,\"cardNumber\":\"7485-2222-3456-2435\",\"cvv\":\"111\"}],\"notes\":[{\"nodeId\":1,\"note\":\"sample note 1\",\"deliveryAdd\":\"12 NVB F4 GV\",\"isDelivery\":false},{\"nodeId\":2,\"note\":\"sample note 2\",\"deliveryAdd\":\"1 NTS F4 GV\",\"isDelivery\":false}],\"creditNotes\":[{\"creditNote\":1,\"cancellation\":false,\"notes\":\"Sample note 1\"},{\"creditNote\":2,\"cancellation\":false,\"notes\":\"Sample note 2\"}]}\n");
         // 1. Create the filter list first
         filters.add(new InvoiceReader());
         filters.add(new PaymentReader());

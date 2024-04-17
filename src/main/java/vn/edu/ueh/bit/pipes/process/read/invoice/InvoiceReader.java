@@ -12,6 +12,7 @@ public class InvoiceReader implements IFilter<IMessage> {
     public IMessage execute(IMessage message) {
         //
         // 1. Read the invoice data from file content comes inside the message
+        //parse to structured data
         List<Invoice> invoices = new ArrayList<>();
         invoices.add(new Invoice(1L, 1L, 1L, 100, "sample invoice 1"));
         invoices.add(new Invoice(2L, 1L, 1L, 100, "sample invoice 2"));
@@ -24,3 +25,4 @@ public class InvoiceReader implements IFilter<IMessage> {
         return message;
     }
 }
+//vovanhai-ueh
